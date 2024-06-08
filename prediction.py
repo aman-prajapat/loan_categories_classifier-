@@ -4,10 +4,10 @@ import pandas as pd
 import xgboost
 import sys
 
-xgModel = pickle.load(open('xgboost_model.pkl','rb'))
-colNames = pickle.load(open('finalColumnsName.pkl','rb'))
-catColandLabels = json.load(open('CatColumnsAndlabels.json','rb'))
-educational_mapping = json.load(open('education_mapping.json','rb'))
+xgModel = pickle.load(open('labels_and_model/xgboost_model.pkl','rb'))
+colNames = pickle.load(open('labels_and_model/finalColumnsName.pkl','rb'))
+catColandLabels = json.load(open('labels_and_model/CatColumnsAndlabels.json','rb'))
+educational_mapping = json.load(open('labels_and_model/education_mapping.json','rb'))
 
 def preprocess(filepath):
     
@@ -32,8 +32,10 @@ def saveToFile(predicted_values,filepath):
     print("File saved at root location")
 
 if __name__ == '__main__':
-    data = preprocess(sys.argv[1])
-    predicted_values = predict(data)
-    saveToFile(predicted_values,sys.argv[1])
-
-
+    try:
+        data = preprocess(sys.argv[1])
+        predicted_values = predict(data)
+        saveToFile(predicted_values, sys.argv[1])
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    input("Press Enter to exit...")  
