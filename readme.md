@@ -3,7 +3,8 @@ Here's a `README.md` file for your project:
 ```markdown
 # XGBoost Model Prediction Pipeline
 
-This repository contains a script to preprocess data, predict values using a pre-trained XGBoost model, and save the results. The script reads data from an Excel file, preprocesses it, makes predictions, and outputs the results to a CSV file.
+This repository contains a script to preprocess data, predict values using a pre-trained XGBoost model, and save the results.
+The script reads data from an Excel file, preprocesses it, makes predictions, and outputs the results to a CSV file.
 
 ## Requirements
 
@@ -81,10 +82,4 @@ python script.py data/input_data.xlsx
 - Ensure the input Excel file is properly formatted and contains the required columns for preprocessing and prediction.
 - The script prompts to press Enter to exit after completion.
 
----
 
-Feel free to modify and extend the script as per your requirements.
-
-```
-
-This `README.md` file provides a detailed explanation of the project, including the requirements, installation steps, usage instructions, and a breakdown of the script. This should help users understand how to run the script and what to expect from it.
